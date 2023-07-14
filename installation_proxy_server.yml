@@ -21,7 +21,7 @@
       shell: sudo systemctl start mosquitto.service
 
     - name: "Installing Node-RED"
-      shell: bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) --confirm-install --confirm-pi
+      shell: sh <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) --confirm-install --confirm-pi
 
     - name: "Start the Node-RED service"
       become: yes
