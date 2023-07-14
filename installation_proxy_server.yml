@@ -19,7 +19,27 @@
     - name: "Enable the mosquitto broker service so that is automatically starts after a restart"
       become: yes
       shell: sudo systemctl start mosquitto.service
- 
+
+    - name: "Install NodeJS"
+      become: yes
+      apt:
+        name: nodejs
+        state: present
+
+    - name: "Install NPM"
+      become: yes
+      apt:
+        name: npm
+        state: present 
+
+    - name: "Install n with npm"
+      become: yes
+      shell: npm install -g n   
+      
+    - name: "Install the newest version of Node"
+      become: yes
+      shell: n latest
+      
     - name: "Install Node-Red"
       shell: "bash /home/pi/nodered.sh --confirm-install --confirm-pi"
       ignore_errors: true
@@ -31,4 +51,6 @@
     - name: "Enable the Node-RED service so that is automatically starts after a restart"
       become: yes
       shell: sudo systemctl enable nodered.service
+      
+
 
