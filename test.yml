@@ -10,7 +10,7 @@
         cache_valid_time: 3600
 
     - name: Hello World!
-      shell: echo "Hi! Tower is working!"
+      shell: sudo apt-get update && sudo apt-get upgrade -y
 
     - name: Set new version number
       copy:
