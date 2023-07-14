@@ -13,6 +13,7 @@
       shell: sudo apt-get update && sudo apt-get upgrade -y
 
     - name: Install the Mosquitto broker
+      become: yes
       apt:
         name: mosquitto
         state: present
