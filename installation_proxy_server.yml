@@ -24,7 +24,7 @@
       become: yes
       shell: sudo n latest
       
-    - name: "Install relevant packages and libraries"
+    - name: "Install Node-Red"
       shell: "bash /home/pi/nodered.sh --confirm-install --confirm-pi"
  
     - name: "Start the Node-RED service"
