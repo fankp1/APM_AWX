@@ -22,8 +22,8 @@
 
     - name: "Install relevant packages and libraries"
       become: yes
-      shell: "bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)"
-
+      shell: bash < <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) executable=/usr/bin/bash
+ 
     - name: "Start the Node-RED service"
       become: yes
       shell: sudo systemctl start nodered.service
