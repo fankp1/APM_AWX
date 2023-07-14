@@ -19,14 +19,11 @@
     - name: "Enable the mosquitto broker service so that is automatically starts after a restart"
       become: yes
       shell: sudo systemctl start mosquitto.service
-
-    - name: "Alternative"
-      command: bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) --confirm-pi --confirm-install
  
     - name: "Install Node-Red"
       shell: "bash /home/pi/nodered.sh --confirm-install --confirm-pi"
-
-   
+      ignore_errors: true
+      
     - name: "Start the Node-RED service"
       become: yes
       shell: sudo systemctl start nodered.service
