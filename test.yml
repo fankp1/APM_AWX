@@ -17,7 +17,3 @@
         name: mosquitoo
         state: present
 
-    - name: Set new version number
-      copy:
-        content: "1.0.1"
-        dest: /etc/fogdevice/version
