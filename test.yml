@@ -1,5 +1,5 @@
 ---
-- name: Hello World!
+- name: Installing basic firmware and libraries for the proxy server!
   hosts: all
 
   tasks:
