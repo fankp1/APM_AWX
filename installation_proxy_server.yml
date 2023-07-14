@@ -20,8 +20,9 @@
       become: yes
       shell: sudo systemctl start mosquitto.service
 
-    - name: "Installing Node-RED"
-      shell: sh <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) --confirm-install --confirm-pi
+    - name: "Install relevant packages and libraries"
+      become: yes
+      shell: sudo apt install build-essential git curl
 
     - name: "Start the Node-RED service"
       become: yes
