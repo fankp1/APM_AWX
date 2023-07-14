@@ -40,7 +40,7 @@
       become: yes
       shell: n latest
       
-    - name: "Install Node-Red"
+    - name: "Install Node-RED"
       shell: "bash /home/pi/nodered.sh --confirm-install --confirm-pi"
       ignore_errors: true
       
