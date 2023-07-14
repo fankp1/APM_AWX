@@ -20,6 +20,10 @@
       become: yes
       shell: sudo systemctl start mosquitto.service
 
+    - name: "Update NodeJS to the newest version"
+      become: yes
+      shell: sudo n latest
+      
     - name: "Install relevant packages and libraries"
       shell: bash < <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) executable=/usr/bin/bash
  
