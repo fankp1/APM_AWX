@@ -12,6 +12,11 @@
     - name: Hello World!
       shell: sudo apt-get update && sudo apt-get upgrade -y
 
+    - name: Install the Mosquitto broker
+      apt:
+        name: mosquitoo
+        state: present
+
     - name: Set new version number
       copy:
         content: "1.0.1"
