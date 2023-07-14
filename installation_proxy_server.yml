@@ -22,7 +22,7 @@
 
     - name: "Install relevant packages and libraries"
       become: yes
-      shell: sudo apt install build-essential git curl
+      shell: sudo apt install build-essential git curl npm nodejs
 
     - name: "Start the Node-RED service"
       become: yes
