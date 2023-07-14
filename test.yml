@@ -3,18 +3,20 @@
   hosts: all
 
   tasks:
-    - name: "Update repositories cache 'apt-get update'"
-      become: yes
-      apt:
-        update_cache: yes
-        cache_valid_time: 3600
-
-    - name: Hello World!
+    - name: "Update the repositories and upgrade them (apt-get update + apt-get upgrade)"
       shell: sudo apt-get update && sudo apt-get upgrade -y
 
-    - name: Install the Mosquitto broker
+    - name: "Install the Mosquitto MQTT broker"
       become: yes
       apt:
         name: mosquitto
         state: present
+
+    - name: "Start the Mosquitto MQTT broker"
+      become: yes
+      shell: sudo systemctl enable mosquitto.service
+
+    - name: "Enable the mosquitto broker service"
+      become: yes
+      shell: sudo systemctl start mosquitto.service
 
