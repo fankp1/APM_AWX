@@ -29,5 +29,6 @@
       shell: sudo systemctl start nodered.service
 
     - name: "Enable the Node-RED service so that is automatically starts after a restart"
-    
+      become: yes
+      shell: sudo systemctl enable nodered.service
 
