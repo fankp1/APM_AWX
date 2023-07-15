@@ -8,8 +8,8 @@
 
     - name: "Clone the AWX APM repository"
       git:
-        repo: https://github.com/sqlite/sqlite.git
-        dest: /home/debian/repos/
+        repo: https://github.com/fankp1/AWX_APM.git
+        dest: /home/pi/
         clone: yes
         
     - name: "Install the Mosquitto MQTT broker"
