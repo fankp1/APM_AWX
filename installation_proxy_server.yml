@@ -6,6 +6,12 @@
     - name: "Update the repositories and upgrade them (apt-get update + apt-get upgrade)"
       shell: sudo apt-get update && sudo apt-get upgrade -y
 
+    - name: "Clone the AWX APM repository"
+      git:
+        repo: https://github.com/sqlite/sqlite.git
+        dest: /home/debian/repos/
+        clone: yes
+        
     - name: "Install the Mosquitto MQTT broker"
       become: yes
       apt:
