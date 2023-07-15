@@ -9,7 +9,7 @@
     - name: "Clone the AWX APM repository"
       git:
         repo: https://github.com/fankp1/AWX_APM.git
-        dest: /home/pi/
+        dest: /home/pi/APM_AWX
         clone: yes
         
     - name: "Install the Mosquitto MQTT broker"
