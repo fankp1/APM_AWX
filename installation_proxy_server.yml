@@ -47,7 +47,7 @@
       shell: n latest
       
     - name: "Install Node-RED"
-      shell: "bash /home/pi/nodered.sh --confirm-install --confirm-pi"
+      shell: "bash /home/pi/APM_AWX/nodered.sh --confirm-install --confirm-pi"
       ignore_errors: true
       
     - name: "Start the Node-RED service"
