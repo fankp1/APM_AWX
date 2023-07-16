@@ -127,7 +127,7 @@
     - name: "Update the repositories before installing Docker"
       shell: sudo apt-get update && sudo apt-get upgrade -y
 
-    - name: "Update the repositories before installing Grafana"
+    - name: "Getting the packages and installing the Docker engine"
       shell: curl -sSL https://get.docker.com | sh
 
 
