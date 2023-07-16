@@ -83,7 +83,7 @@
       shell: sudo systemctl start influxdb
 
     - name: "Update the repositories before installing Grafana"
-      shell: sudo apt-get update && sudo apt-get upgrade -y
+      shell: sudo apt-get update
 
     - name: "Getting the keys of Grafana"
       shell: curl https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/grafana-archive-keyrings.gpg >/dev/null
@@ -102,8 +102,6 @@
 
     - name: "Start the Grafana service"
       shell: sudo systemctl start grafana-server
-
-
 
     - name: "Get the service facts to check which services are running and enabled"
       ansible.builtin.service_facts:
@@ -126,6 +124,11 @@
 
 
 
+    - name: "Update the repositories before installing Docker"
+      shell: sudo apt-get update && sudo apt-get upgrade -y
+
+    - name: "Update the repositories before installing Grafana"
+      shell: curl -sSL https://get.docker.com | sh
 
 
 
