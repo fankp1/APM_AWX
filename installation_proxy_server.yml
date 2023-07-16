@@ -64,10 +64,11 @@
     - name: try to work out how to access the service
       ansible.builtin.debug:
         var: ansible_facts.services["nodered.service"]
+        
+    - name: "Installing the Node-RED extension of Kunbus"
+      shell: npm install node-red-contrib-revpi-nodes
 
-
-
-
-      
-
+    - name: "Update the repository before installing InfluxDB"
+      shell: sudo apt-get update && sudo apt-get upgrade -y
+  
 
