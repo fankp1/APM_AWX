@@ -114,7 +114,7 @@
 
     - name: "Check the status of the Influx service"
       ansible.builtin.debug:
-        var: ansible_facts.services["influxd.service"]
+        var: ansible_facts.services["influxdb.service"]
 
     - name: "Check the status of the Grafana service"
       ansible.builtin.debug:
