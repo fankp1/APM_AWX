@@ -57,13 +57,6 @@
     - name: "Enable the Node-RED service so that it automatically starts after a restart"
       become: yes
       shell: sudo systemctl enable nodered.service
-
-    - name: get service facts
-      ansible.builtin.service_facts:
-
-    - name: try to work out how to access the service
-      ansible.builtin.debug:
-        var: ansible_facts.services["nodered.service"]
         
     - name: "Installing the Node-RED extension of Kunbus"
       shell: npm install node-red-contrib-revpi-nodes
@@ -109,6 +102,27 @@
 
     - name: "Start the Grafana service"
       shell: sudo systemctl start grafana-server
+
+
+
+    - name: "Get the service facts to check which services are running and enabled"
+      ansible.builtin.service_facts:
+
+    - name: "Check the status of the Mosquitto MQTT service"
+      ansible.builtin.debug:
+        var: ansible_facts.services["mosquitto.service"]
+
+    - name: "Check the status of the Influx service"
+      ansible.builtin.debug:
+        var: ansible_facts.services["influxd.service"]
+
+    - name: "Check the status of the Grafana service"
+      ansible.builtin.debug:
+        var: ansible_facts.services["grafana-server.service"]
+
+    - name: "Check the status of the NodeRED service"
+      ansible.builtin.debug:
+        var: ansible_facts.services["nodered.service"]
 
 
 
