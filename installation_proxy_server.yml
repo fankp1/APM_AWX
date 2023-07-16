@@ -65,26 +65,7 @@
       ansible.builtin.debug:
         var: ansible_facts.services["nodered.service"]
 
-  npm install node-red-contrib-revpi-nodes
 
-  sudo apt-get update && sudo apt-get upgrade -y
-
-curl https://repos.influxdata.com/influxdata-archive.key | gpg --dearmor | sudo tee /usr/share/keyrings/influxdb-archive-keyring.gpg >/dev/null
-
-echo "deb [signed-by=/usr/share/keyrings/influxdb-archive-keyring.gpg] https://repos.influxdata.com/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
-sudo apt update
-sudo apt install influxdb
-sudo systemctl unmask influxdb
-sudo systemctl enable influxdb
-sudo systemctl start influxdb
-
-sudo apt-get update && sudo apt-get upgrade -y
-curl https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/grafana-archive-keyrings.gpg >/dev/null
-echo "deb [signed-by=/usr/share/keyrings/grafana-archive-keyrings.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
-sudo apt update
-sudo apt install grafana
-sudo systemctl enable grafana-server
-sudo systemctl start grafana-server
 
 
       
