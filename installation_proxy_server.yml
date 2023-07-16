@@ -57,6 +57,13 @@
     - name: "Enable the Node-RED service so that is automatically starts after a restart"
       become: yes
       shell: sudo systemctl enable nodered.service
+
+    - name: get service facts
+      ansible.builtin.service_facts:
+
+    - name: try to work out how to access the service
+      ansible.builtin.debug:
+        var: ansible_facts.services["nodered.service"]
       
 
 
