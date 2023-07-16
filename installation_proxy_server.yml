@@ -6,6 +6,12 @@
     - name: "Update the repositories and upgrade them (apt-get update + apt-get upgrade)"
       shell: sudo apt-get update && sudo apt-get upgrade -y
 
+    - name: "Install git to clone the repositories"
+      become: yes
+      apt:
+        name: git
+        state: present
+
     - name: "Clone the AWX APM repository"
       git:
         repo: https://github.com/fankp1/AWX_APM.git
