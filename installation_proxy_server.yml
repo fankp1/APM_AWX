@@ -22,7 +22,7 @@
       become: yes
       shell: sudo systemctl enable mosquitto.service
 
-    - name: "Enable the mosquitto broker service so that is automatically starts after a restart"
+    - name: "Enable the mosquitto broker service so that it automatically starts after a restart"
       become: yes
       shell: sudo systemctl start mosquitto.service
 
@@ -54,7 +54,7 @@
       become: yes
       shell: sudo systemctl start nodered.service
 
-    - name: "Enable the Node-RED service so that is automatically starts after a restart"
+    - name: "Enable the Node-RED service so that it automatically starts after a restart"
       become: yes
       shell: sudo systemctl enable nodered.service
 
@@ -68,7 +68,58 @@
     - name: "Installing the Node-RED extension of Kunbus"
       shell: npm install node-red-contrib-revpi-nodes
 
-    - name: "Update the repository before installing InfluxDB"
+    - name: "Getting the keys of InfluxDB"
+      shell: curl https://repos.influxdata.com/influxdata-archive.key | gpg --dearmor | sudo tee /usr/share/keyrings/influxdb-archive-keyring.gpg >/dev/null
+
+    - name: "Adding the InfluxDB repository to the sources list"
+      shell: echo "deb [signed-by=/usr/share/keyrings/influxdb-archive-keyring.gpg] https://repos.influxdata.com/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+
+    - name: "Update the repositories before installing InfluxDB"
+      shell: sudo apt-get update
+
+    - name: "Install the InfluxDB TSDB"
+      shell: sudo apt install influxdb
+
+    - name: "Unmask the InfluxDB service"
+      shell: sudo systemctl unmask influxdb
+
+    - name: "Enable the InfluxDB service so that it automatically starts after a restart""
+      shell: sudo systemctl enable influxdb
+
+    - name: "Start the InfluxDB service"
+      shell: sudo systemctl start influxdb
+
+    - name: "Update the repositories before installing Grafana"
       shell: sudo apt-get update && sudo apt-get upgrade -y
+
+    - name: "Getting the keys of Grafana"
+      shell: curl https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/grafana-archive-keyrings.gpg >/dev/null
+
+    - name: "Adding the Grafana repository to the sources list"
+      shell: echo "deb [signed-by=/usr/share/keyrings/grafana-archive-keyrings.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
+
+    - name: "Update the repositories before installing Grafana"
+      shell: sudo apt-get update
+
+    - name: "Install Grafana"
+      shell: sudo apt install grafana
+
+    - name: "Enable the Grafana service so that it automatically starts after a restart""
+      shell: sudo systemctl enable grafana-server
+
+    - name: "Start the Grafana service"
+      shell: sudo systemctl start grafana-server
+
+
+
+
+
+
+
+
+      
+
+
+
   
 
