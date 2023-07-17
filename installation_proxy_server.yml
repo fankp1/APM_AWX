@@ -170,17 +170,7 @@
         path: /opt/siot/tokens/
         state: directory
 
-    - name: "Create a new directory for the Plugin-Spawner"
-      become: yes
-      file:
-        path: /opt/siot/plugin-spawner/
-        state: directory
 
-    - name: "Create a new directory for the SIOT-Plugins"
-      become: yes
-      file:
-        path: /opt/siot/plugin-spawner/plugins/
-        state: directory
 
     - name: "Move the Proxy Deploy Token"
       become: yes
@@ -201,6 +191,18 @@
 
     - name: "Check out the relevant files"
       shell: git checkout master -- docker-compose.yml compose-files
+
+    - name: "Create a new directory for the Plugin-Spawner"
+      become: yes
+      file:
+        path: /opt/siot/plugin-spawner/
+        state: directory
+
+    - name: "Create a new directory for the SIOT-Plugins"
+      become: yes
+      file:
+        path: /opt/siot/plugin-spawner/plugins/
+        state: directory
 
 
 
