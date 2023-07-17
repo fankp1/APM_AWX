@@ -158,6 +158,22 @@
       become: yes
       shell: sudo update-ca-certificates
 
+    - name: "Create a new directory for SIOT"
+      become: yes
+      shell: sudo mkdir /opt/siot/
+
+    - name: "Create a new directory for the SIOT-Tokens"
+      become: yes
+      shell: sudo mkdir /opt/siot/tokens/
+
+    - name: "Create a new directory for the Plugin-Spawner"
+      become: yes
+      shell: sudo mkdir /opt/siot/plugin-spawner/
+
+    - name: "Create a new directory for the SIOT-Plugins"
+      become: yes
+      shell: sudo mkdir /opt/siot/plugin-spawner/plugins/
+
       
 
 
