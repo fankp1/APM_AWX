@@ -176,11 +176,11 @@
 
     - name: "Move the Proxy Deploy Token"
       become: yes
-      shell: sudo cp sudo cp /home/pi/APM_AWX/.proxy-deploy-token /opt/siot/tokens/
+      shell: sudo cp /home/pi/APM_AWX/.proxy-deploy-token /opt/siot/tokens/
 
     - name: "Move the S2 Plugin MQTT Proxy Deploy Token"
       become: yes
-      shell: sudo cp sudo cp /home/pi/APM_AWX/.s2-plugin-mqtt-proxy-deploy-token /opt/siot/tokens/
+      shell: sudo cp /home/pi/APM_AWX/.s2-plugin-mqtt-proxy-deploy-token /opt/siot/tokens/
       
 
 
