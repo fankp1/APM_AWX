@@ -136,6 +136,16 @@
     - name: "Getting the packages and installing the Docker engine"
       shell: curl -sSL https://get.docker.com | sh
 
+    - name: "Change the user mode so Docker can be used without sudo"
+      shell: sudo usermod -aG docker pi
+
+    - name: "Download the Docker-Compose repository"
+      shell: sudo curl -L https://github.com/docker/compose/releases/download/v2.19.1/docker-compose-linux-aarch64 -o /usr/local/bin/docker-compose
+
+    - name: "Change the user mode so that Docker-Compose can be used without sudo"
+      shell: sudo chmod +x /usr/local/bin/docker-compose
+
+
 
 
 
