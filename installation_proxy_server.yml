@@ -160,19 +160,27 @@
 
     - name: "Create a new directory for SIOT"
       become: yes
-      shell: sudo mkdir /opt/siot/
+      file:
+        path: /opt/siot/
+        state: directory
 
     - name: "Create a new directory for the SIOT-Tokens"
       become: yes
-      shell: sudo mkdir /opt/siot/tokens/
+      file:
+        path: /opt/siot/tokens/
+        state: directory
 
     - name: "Create a new directory for the Plugin-Spawner"
       become: yes
-      shell: sudo mkdir /opt/siot/plugin-spawner/
+      file:
+        path: /opt/siot/plugin-spawner/
+        state: directory
 
     - name: "Create a new directory for the SIOT-Plugins"
       become: yes
-      shell: sudo mkdir /opt/siot/plugin-spawner/plugins/
+      file:
+        path: /opt/siot/plugin-spawner/plugins/
+        state: directory
 
     - name: "Move the Proxy Deploy Token"
       become: yes
