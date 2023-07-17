@@ -192,7 +192,7 @@
 
     - name: "Clone the Plugin Spawner repository"
       git:
-        repo: https://proxy-deploy-token:{{ lookup('file', '../tokens/.proxy-deploy-token') }}@repo.appmodule.net/siot/s2-plugin-spawner.git
+        repo: https://proxy-deploy-token:{{ lookup('file', '/opt/siot/tokens/.proxy-deploy-token') }}@repo.appmodule.net/siot/s2-plugin-spawner.git
         dest: /opt/siot/plugin-spawner
         version: master
         single_branch: yes
