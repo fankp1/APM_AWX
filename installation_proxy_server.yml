@@ -207,6 +207,19 @@
         path: /opt/siot/plugin-spawner/plugins/
         state: directory
 
+    - name: "Create a new directory for the Postgres database"
+      become: yes
+      file:
+        path: /opt/siot/plugin-spawner/postgres-data/
+        state: directory
+
+    - name: "Create a new directory for the SQLite data"
+      become: yes
+      file:
+        path: /opt/siot/plugin-spawner/sqlite-data/
+        state: directory
+        
+
 
 
 
