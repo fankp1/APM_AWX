@@ -128,8 +128,6 @@
       ansible.builtin.debug:
         var: ansible_facts.services["nodered.service"]
 
-
-
     - name: "Update the repositories before installing Docker"
       shell: sudo apt-get update && sudo apt-get upgrade -y
 
@@ -145,6 +143,18 @@
     - name: "Change the user mode so that Docker-Compose can be used without sudo"
       shell: sudo chmod +x /usr/local/bin/docker-compose
 
+    - name: "Download the isgrootx1 root certificates"
+      shell: curl -o isrgrootx1.pem https://letsencrypt.org/certs/isrgrootx1.pem
+
+    - name: "Copy the certificates to the desired folder"
+      become: yes
+      shell: sudo cp isrgrootx1.pem /usr/local/share/ca-certificates/
+
+    - name: "Update the certificates"
+      become: yes
+      shell: sudo update-ca-certificates
+
+      
 
 
 
