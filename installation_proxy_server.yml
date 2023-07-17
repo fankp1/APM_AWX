@@ -24,6 +24,10 @@
         name: mosquitto
         state: present
 
+    - name: "Move the MQTT broker config file"
+      become: yes
+      shell: sudo cp /home/pi/APM_AWX/siot-plugin.conf /etc/mosquitto/conf.d/
+
     - name: "Start the Mosquitto MQTT broker"
       become: yes
       shell: sudo systemctl enable mosquitto.service
