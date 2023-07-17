@@ -191,6 +191,7 @@
       shell: sudo cp /home/pi/APM_AWX/.s2-plugin-mqtt-proxy-deploy-token /opt/siot/tokens/
 
     - name: "Clone the Plugin Spawner repository"
+      become: yes
       git:
         repo: https://proxy-deploy-token:{{ lookup('file', '/opt/siot/tokens/.proxy-deploy-token') }}@repo.appmodule.net/siot/s2-plugin-spawner.git
         dest: /opt/siot/plugin-spawner
