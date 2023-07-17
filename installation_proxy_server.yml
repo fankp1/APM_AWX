@@ -190,7 +190,10 @@
         depth: 1
 
     - name: "Check out the relevant files"
-      shell: git checkout master -- docker-compose.yml compose-files
+      become: yes
+      command: git checkout master -- docker-compose.yml compose-files
+      args:
+        chdir: /opt/siot/plugin-spawner
 
     - name: "Create a new directory for the Plugin-Spawner"
       become: yes
