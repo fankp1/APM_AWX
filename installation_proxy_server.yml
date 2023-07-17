@@ -189,7 +189,17 @@
     - name: "Move the S2 Plugin MQTT Proxy Deploy Token"
       become: yes
       shell: sudo cp /home/pi/APM_AWX/.s2-plugin-mqtt-proxy-deploy-token /opt/siot/tokens/
-      
+
+    - name: "Clone the Plugin Spawner repository"
+      git:
+        repo: https://proxy-deploy-token:{{ lookup('file', '../tokens/.proxy-deploy-token') }}@repo.appmodule.net/siot/s2-plugin-spawner.git
+        dest: /opt/siot/plugin-spawner
+        version: master
+        single_branch: yes
+        depth: 1
+
+    - name: "Check out the relevant files"
+      shell: git checkout master -- docker-compose.yml compose-files
 
 
 
