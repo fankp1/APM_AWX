@@ -229,6 +229,16 @@
         repo: git clone https://proxy-deploy-token:pB_sSPW3xecHy-c1f5c5@repo.appmodule.net/siot/s2-plugin-mqtt.git
         dest: /opt/siot/plugin-spawner/plugins
 
+    - name: "Move the bash script to the desired folder"
+      become: yes
+      shell: sudo cp /home/pi/APM_AWX/deploy-siot-spawner.sh /opt/siot/deploy-siot-spawner.sh
+
+    - name: "Add the execution permission to the bash script"
+      become: yes
+      shell: sudo chmod +x /opt/siot/deploy-siot-spawner.sh
+
+
+
 
 
       
