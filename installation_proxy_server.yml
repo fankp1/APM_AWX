@@ -42,12 +42,6 @@
         name: nodejs
         state: present
 
-    - name: "Install NPM"
-      become: yes
-      apt:
-        name: npm
-        state: present 
-
     - name: "Install n with npm"
       become: yes
       shell: npm install -g n   
