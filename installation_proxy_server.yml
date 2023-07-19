@@ -226,7 +226,7 @@
     - name: "Clone the repository for the MQTT-Plugin"
       become: yes
       git:
-        repo: git clone https://proxy-deploy-token:pB_sSPW3xecHy-c1f5c5@repo.appmodule.net/siot/s2-plugin-mqtt.git
+        repo: https://proxy-deploy-token:pB_sSPW3xecHy-c1f5c5@repo.appmodule.net/siot/s2-plugin-mqtt.git
         dest: /opt/siot/plugin-spawner/plugins
 
     - name: "Move the bash script to the desired folder"
