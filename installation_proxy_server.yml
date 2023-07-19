@@ -237,6 +237,9 @@
       become: yes
       shell: sudo chmod +x /opt/siot/deploy-siot-spawner.sh
 
+    - name: "Execute the deploy bash script (SIOT Spawner)"
+      shell: "bash /opt/siot/deploy-siot-spawner.sh"
+
 
 
 
