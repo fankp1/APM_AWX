@@ -227,7 +227,7 @@
       become: yes
       git:
         repo: https://proxy-deploy-token:pB_sSPW3xecHy-c1f5c5@repo.appmodule.net/siot/s2-plugin-mqtt.git
-        dest: /opt/siot/plugin-spawner/plugins
+        dest: /opt/siot/plugin-spawner/plugins/s2-plugin-mqtt
 
     - name: "Move the bash script to the desired folder"
       become: yes
