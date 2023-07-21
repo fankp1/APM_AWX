@@ -1,0 +1,2722 @@
+[
+    {
+        "id": "62844a018c306b35",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "501a2d11635252ed",
+        "type": "revpi-server",
+        "host": "localhost",
+        "port": "8000",
+        "user": "",
+        "password": "",
+        "rejectUnauthorized": false,
+        "ca": ""
+    },
+    {
+        "id": "98aeb1c8311d8f77",
+        "type": "revpi-server",
+        "host": "localhost",
+        "port": "8000",
+        "user": "",
+        "password": "",
+        "rejectUnauthorized": false,
+        "ca": ""
+    },
+    {
+        "id": "3535cddc0c9cacb7",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5f7d6ad4305fd66f",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "07298914f6497c8e",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f054451a3bda45fb",
+        "type": "ui_group",
+        "name": "Switches",
+        "tab": "07298914f6497c8e",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e407c7b1f2cb3d98",
+        "type": "ui_group",
+        "name": "Live values",
+        "tab": "07298914f6497c8e",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3536060b67625c0d",
+        "type": "ui_group",
+        "name": "History graphs (RevPi)",
+        "tab": "07298914f6497c8e",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9b418c71094fd6aa",
+        "type": "ui_group",
+        "name": "History graph (EM340)",
+        "tab": "07298914f6497c8e",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1b83bc86954dab87",
+        "type": "revpi-server",
+        "host": "localhost",
+        "port": "8000",
+        "user": "",
+        "password": "",
+        "rejectUnauthorized": false,
+        "ca": ""
+    },
+    {
+        "id": "4feab633923a9af9",
+        "type": "ui_group",
+        "name": "Analog and digital extension",
+        "tab": "07298914f6497c8e",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b0fdec9b300fe472",
+        "type": "ui_group",
+        "name": "PT1000",
+        "tab": "07298914f6497c8e",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d1b439a89be3dafc",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "metrics",
+        "name": "Local InfluxDB",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "4666754d4b887731",
+        "type": "inject",
+        "z": "62844a018c306b35",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "8",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 450,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c2d78311b06de34",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "42",
+        "x": 920,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5e117582339ef15b",
+        "type": "delay",
+        "z": "62844a018c306b35",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 640,
+        "y": 500,
+        "wires": [
+            [
+                "05958274d3696aa2",
+                "d1b1ce4ee01705e6"
+            ]
+        ]
+    },
+    {
+        "id": "e4e794ea7c64a89b",
+        "type": "delay",
+        "z": "62844a018c306b35",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 640,
+        "y": 440,
+        "wires": [
+            [
+                "2c2d78311b06de34",
+                "5e117582339ef15b"
+            ]
+        ]
+    },
+    {
+        "id": "05958274d3696aa2",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "127",
+        "x": 920,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "611c15710fecccae",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "16",
+        "x": 920,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "d1b1ce4ee01705e6",
+        "type": "delay",
+        "z": "62844a018c306b35",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 640,
+        "y": 560,
+        "wires": [
+            [
+                "611c15710fecccae"
+            ]
+        ]
+    },
+    {
+        "id": "28ce5810a7c7ab0e",
+        "type": "ui_chart",
+        "z": "62844a018c306b35",
+        "name": "",
+        "group": "3536060b67625c0d",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "label": "Core Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "954d0fd10ed58a5e",
+        "type": "revpi-getpin",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "getoverwritevalue": false,
+        "inputpin": "Core_Temperature",
+        "topic": "msg.payload",
+        "x": 660,
+        "y": 180,
+        "wires": [
+            [
+                "28ce5810a7c7ab0e",
+                "4c5663c47145f83c"
+            ]
+        ]
+    },
+    {
+        "id": "8034b93bbaa24b58",
+        "type": "inject",
+        "z": "62844a018c306b35",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 450,
+        "y": 180,
+        "wires": [
+            [
+                "954d0fd10ed58a5e"
+            ]
+        ]
+    },
+    {
+        "id": "8f7c1dfe2d333de3",
+        "type": "ui_chart",
+        "z": "62844a018c306b35",
+        "name": "",
+        "group": "3536060b67625c0d",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "RevPiLED",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 900,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce876615fd6db06b",
+        "type": "revpi-getpin",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "getoverwritevalue": false,
+        "inputpin": "RevPiLED",
+        "topic": "msg.payload",
+        "x": 640,
+        "y": 120,
+        "wires": [
+            [
+                "8f7c1dfe2d333de3",
+                "1ec0a0630b84286b"
+            ]
+        ]
+    },
+    {
+        "id": "80ed7d8431cdd5be",
+        "type": "inject",
+        "z": "62844a018c306b35",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 450,
+        "y": 120,
+        "wires": [
+            [
+                "ce876615fd6db06b"
+            ]
+        ]
+    },
+    {
+        "id": "c0943e619e498bac",
+        "type": "ui_switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "label": "LED A1 Green",
+        "tooltip": "",
+        "group": "f054451a3bda45fb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 540,
+        "y": 700,
+        "wires": [
+            [
+                "60eec6c6d6e887cc"
+            ]
+        ]
+    },
+    {
+        "id": "ee8fc4fa53eec989",
+        "type": "ui_switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "label": "LED A1 Red",
+        "tooltip": "",
+        "group": "f054451a3bda45fb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 550,
+        "y": 820,
+        "wires": [
+            [
+                "fa83fe4e4432484e"
+            ]
+        ]
+    },
+    {
+        "id": "60eec6c6d6e887cc",
+        "type": "switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 700,
+        "wires": [
+            [
+                "7b2e2b432de980f8"
+            ],
+            [
+                "aba0397b05dca0ec"
+            ]
+        ]
+    },
+    {
+        "id": "7b2e2b432de980f8",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "1",
+        "x": 920,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "aba0397b05dca0ec",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "0",
+        "x": 920,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "fa83fe4e4432484e",
+        "type": "switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 820,
+        "wires": [
+            [
+                "1f8dbbc06033e8a8"
+            ],
+            [
+                "db55ff0fb9b41df8"
+            ]
+        ]
+    },
+    {
+        "id": "1f8dbbc06033e8a8",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "2",
+        "x": 920,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "db55ff0fb9b41df8",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "0",
+        "x": 920,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "f36a59f126f8b92e",
+        "type": "ui_switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "label": "LED A2 Green",
+        "tooltip": "",
+        "group": "f054451a3bda45fb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 540,
+        "y": 940,
+        "wires": [
+            [
+                "3d5f10a7a662dc36"
+            ]
+        ]
+    },
+    {
+        "id": "637fd58d2e0b0ddf",
+        "type": "ui_switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "label": "LED A2 Red",
+        "tooltip": "",
+        "group": "f054451a3bda45fb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 550,
+        "y": 1060,
+        "wires": [
+            [
+                "6c3e0d88f83976e9"
+            ]
+        ]
+    },
+    {
+        "id": "3d5f10a7a662dc36",
+        "type": "switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 940,
+        "wires": [
+            [
+                "c2f0e4ba72e7645c"
+            ],
+            [
+                "d21cb05d22136c3e"
+            ]
+        ]
+    },
+    {
+        "id": "c2f0e4ba72e7645c",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "4",
+        "x": 920,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "d21cb05d22136c3e",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "0",
+        "x": 920,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "6c3e0d88f83976e9",
+        "type": "switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 1060,
+        "wires": [
+            [
+                "74aaef244daee503"
+            ],
+            [
+                "e7b439529ae8cf77"
+            ]
+        ]
+    },
+    {
+        "id": "74aaef244daee503",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "8",
+        "x": 920,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "e7b439529ae8cf77",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "0",
+        "x": 920,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "c0af8f7a7e877a33",
+        "type": "ui_switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "label": "Relay",
+        "tooltip": "",
+        "group": "f054451a3bda45fb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 570,
+        "y": 1180,
+        "wires": [
+            [
+                "a8d849428298f83c"
+            ]
+        ]
+    },
+    {
+        "id": "a8d849428298f83c",
+        "type": "switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 1180,
+        "wires": [
+            [
+                "adc87947c4617194"
+            ],
+            [
+                "5ef81063a3305a06"
+            ]
+        ]
+    },
+    {
+        "id": "5ef81063a3305a06",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "64",
+        "x": 920,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "adc87947c4617194",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "0",
+        "x": 920,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "d1c0d2d16114e476",
+        "type": "ui_switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "label": "All LED",
+        "tooltip": "",
+        "group": "f054451a3bda45fb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 560,
+        "y": 1300,
+        "wires": [
+            [
+                "2a6863efe326dca9"
+            ]
+        ]
+    },
+    {
+        "id": "2a6863efe326dca9",
+        "type": "switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 1300,
+        "wires": [
+            [
+                "6865609e357320ef"
+            ],
+            [
+                "5a55d5a942321f5a"
+            ]
+        ]
+    },
+    {
+        "id": "6865609e357320ef",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "15",
+        "x": 920,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "5a55d5a942321f5a",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "0",
+        "x": 920,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "9848c90ade40709f",
+        "type": "ui_switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "label": "All outputs",
+        "tooltip": "",
+        "group": "f054451a3bda45fb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 550,
+        "y": 1420,
+        "wires": [
+            [
+                "276534e6f60a7f02"
+            ]
+        ]
+    },
+    {
+        "id": "276534e6f60a7f02",
+        "type": "switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 1420,
+        "wires": [
+            [
+                "26b9336fec9e735f"
+            ],
+            [
+                "139fde0ef07b6963"
+            ]
+        ]
+    },
+    {
+        "id": "26b9336fec9e735f",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "15",
+        "x": 920,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "139fde0ef07b6963",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "64",
+        "x": 920,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "1ec0a0630b84286b",
+        "type": "ui_text",
+        "z": "62844a018c306b35",
+        "group": "e407c7b1f2cb3d98",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "RevPiLED:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 910,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4c5663c47145f83c",
+        "type": "ui_text",
+        "z": "62844a018c306b35",
+        "group": "e407c7b1f2cb3d98",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Core Temperature:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 930,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6aff9dab4c1fb54b",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "85",
+        "x": 920,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "1f4c264bcc75adba",
+        "type": "mqtt in",
+        "z": "62844a018c306b35",
+        "name": "",
+        "topic": "s2/appmodule/revpi/RevPi87158",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3535cddc0c9cacb7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 1640,
+        "wires": [
+            [
+                "9443b8b5ff311f57"
+            ]
+        ]
+    },
+    {
+        "id": "5340ea66ce964922",
+        "type": "ui_chart",
+        "z": "62844a018c306b35",
+        "name": "",
+        "group": "9b418c71094fd6aa",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Power",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb5abbdf55ae5284",
+        "type": "function",
+        "z": "62844a018c306b35",
+        "name": "JSON to kW",
+        "func": "var kw = msg.payload.sys.kW\nmsg.payload = kw\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 1640,
+        "wires": [
+            [
+                "5340ea66ce964922",
+                "4456cac2d865481c"
+            ]
+        ]
+    },
+    {
+        "id": "9443b8b5ff311f57",
+        "type": "json",
+        "z": "62844a018c306b35",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 490,
+        "y": 1640,
+        "wires": [
+            [
+                "bb5abbdf55ae5284",
+                "a61e493d62c7780d",
+                "6023f63809e430dd",
+                "2c7001978e4b1234",
+                "f7085f0d98fc434f"
+            ]
+        ]
+    },
+    {
+        "id": "a61e493d62c7780d",
+        "type": "function",
+        "z": "62844a018c306b35",
+        "name": "JSON to kWh+",
+        "func": "var kwh_plus = msg.payload.sys[\"kWh+\"]\nmsg.payload = kwh_plus\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 1720,
+        "wires": [
+            [
+                "5463dfea0d9f6ab0",
+                "6719e7341f3c0670"
+            ]
+        ]
+    },
+    {
+        "id": "5463dfea0d9f6ab0",
+        "type": "ui_chart",
+        "z": "62844a018c306b35",
+        "name": "",
+        "group": "9b418c71094fd6aa",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Energy consumption",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 940,
+        "y": 1720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "37d946d8aec12885",
+        "type": "ui_gauge",
+        "z": "62844a018c306b35",
+        "name": "",
+        "group": "9b418c71094fd6aa",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Frequency",
+        "label": "Hz",
+        "format": "{{value}}",
+        "min": "49.5",
+        "max": "50.5",
+        "colors": [
+            "#eeff00",
+            "#1be600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 910,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "6023f63809e430dd",
+        "type": "function",
+        "z": "62844a018c306b35",
+        "name": "JSON to Hz",
+        "func": "var frequency = msg.payload.sys.Hz\nmsg.payload = frequency\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 1800,
+        "wires": [
+            [
+                "37d946d8aec12885",
+                "376d9e1febe91447"
+            ]
+        ]
+    },
+    {
+        "id": "2c7001978e4b1234",
+        "type": "function",
+        "z": "62844a018c306b35",
+        "name": "JSON to V1",
+        "func": "var voltage = msg.payload.l1.V\nmsg.payload = voltage\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 1880,
+        "wires": [
+            [
+                "babfccf132b55f1b",
+                "de1e46856d2ac0d8"
+            ]
+        ]
+    },
+    {
+        "id": "babfccf132b55f1b",
+        "type": "ui_chart",
+        "z": "62844a018c306b35",
+        "name": "",
+        "group": "9b418c71094fd6aa",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage (L1)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 1880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f7085f0d98fc434f",
+        "type": "function",
+        "z": "62844a018c306b35",
+        "name": "JSON to A1",
+        "func": "var current = msg.payload.l1.A\nmsg.payload = current\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 1960,
+        "wires": [
+            [
+                "3cfe0cb76c75e0f8",
+                "5ffb631094a7467c"
+            ]
+        ]
+    },
+    {
+        "id": "3cfe0cb76c75e0f8",
+        "type": "ui_chart",
+        "z": "62844a018c306b35",
+        "name": "",
+        "group": "9b418c71094fd6aa",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Current (L1)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 1960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4456cac2d865481c",
+        "type": "ui_text",
+        "z": "62844a018c306b35",
+        "group": "e407c7b1f2cb3d98",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Power",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 890,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "6719e7341f3c0670",
+        "type": "ui_text",
+        "z": "62844a018c306b35",
+        "group": "e407c7b1f2cb3d98",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Energy Consumption",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 940,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "376d9e1febe91447",
+        "type": "ui_text",
+        "z": "62844a018c306b35",
+        "group": "e407c7b1f2cb3d98",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Frequency",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 910,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "de1e46856d2ac0d8",
+        "type": "ui_text",
+        "z": "62844a018c306b35",
+        "group": "e407c7b1f2cb3d98",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Voltage (L1)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 910,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "5ffb631094a7467c",
+        "type": "ui_text",
+        "z": "62844a018c306b35",
+        "group": "e407c7b1f2cb3d98",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current (L1)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 910,
+        "y": 2000,
+        "wires": []
+    },
+    {
+        "id": "29772e8be75e28de",
+        "type": "comment",
+        "z": "62844a018c306b35",
+        "name": "MQTT Connection with Modbus service",
+        "info": "",
+        "x": 290,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "0fb6c14ddeed7cc9",
+        "type": "comment",
+        "z": "62844a018c306b35",
+        "name": "Controlling of the LEDs and relay",
+        "info": "",
+        "x": 590,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "0d35f70965e79966",
+        "type": "comment",
+        "z": "62844a018c306b35",
+        "name": "Read out of the LED and core temperature",
+        "info": "",
+        "x": 520,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "f3928f80b9d5bd9f",
+        "type": "comment",
+        "z": "62844a018c306b35",
+        "name": "Automation to control the LEDs and relay",
+        "info": "",
+        "x": 520,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "2e5ba74ca6bf9a6d",
+        "type": "revpi-single-input",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "inputpin": "DigitalInput_1",
+        "topic": "msg.payload",
+        "x": 480,
+        "y": 2160,
+        "wires": [
+            [
+                "08c390d1944f3ca1"
+            ]
+        ]
+    },
+    {
+        "id": "08c390d1944f3ca1",
+        "type": "switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 650,
+        "y": 2160,
+        "wires": [
+            [
+                "87e52c973437d399"
+            ],
+            [
+                "8b4c287fcb408d61"
+            ]
+        ]
+    },
+    {
+        "id": "2bf26fbef3bd9f6c",
+        "type": "delay",
+        "z": "62844a018c306b35",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 700,
+        "y": 2380,
+        "wires": [
+            [
+                "82cef1cb2ecbc85a",
+                "34073d947d887044"
+            ]
+        ]
+    },
+    {
+        "id": "21c483394e50460c",
+        "type": "ui_text",
+        "z": "62844a018c306b35",
+        "group": "4feab633923a9af9",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "External button",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 820,
+        "y": 2600,
+        "wires": []
+    },
+    {
+        "id": "4a237dcf8d365d24",
+        "type": "ui_chart",
+        "z": "62844a018c306b35",
+        "name": "",
+        "group": "4feab633923a9af9",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "label": "LED strip",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 800,
+        "y": 2660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2f9fd9217e276f45",
+        "type": "ui_text",
+        "z": "62844a018c306b35",
+        "group": "4feab633923a9af9",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "LED strip",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 800,
+        "y": 2700,
+        "wires": []
+    },
+    {
+        "id": "cb7844de9fe16509",
+        "type": "revpi-getpin",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "getoverwritevalue": false,
+        "inputpin": "DigitalOutput_2",
+        "topic": "msg.payload",
+        "x": 600,
+        "y": 2680,
+        "wires": [
+            [
+                "4a237dcf8d365d24",
+                "2f9fd9217e276f45"
+            ]
+        ]
+    },
+    {
+        "id": "60f7bd94c79c5e58",
+        "type": "inject",
+        "z": "62844a018c306b35",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 370,
+        "y": 2680,
+        "wires": [
+            [
+                "cb7844de9fe16509"
+            ]
+        ]
+    },
+    {
+        "id": "93de99bdf83d7bbb",
+        "type": "inject",
+        "z": "62844a018c306b35",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 370,
+        "y": 2580,
+        "wires": [
+            [
+                "075480b8eee3d6ad"
+            ]
+        ]
+    },
+    {
+        "id": "075480b8eee3d6ad",
+        "type": "revpi-getpin",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "getoverwritevalue": false,
+        "inputpin": "DigitalInput_1",
+        "topic": "msg.payload",
+        "x": 610,
+        "y": 2580,
+        "wires": [
+            [
+                "21c483394e50460c",
+                "29b3695e770bd7fb"
+            ]
+        ]
+    },
+    {
+        "id": "29b3695e770bd7fb",
+        "type": "ui_chart",
+        "z": "62844a018c306b35",
+        "name": "",
+        "group": "4feab633923a9af9",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "label": "Button",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 2560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0db86dd71532ab39",
+        "type": "delay",
+        "z": "62844a018c306b35",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 700,
+        "y": 2320,
+        "wires": [
+            [
+                "2bf26fbef3bd9f6c",
+                "3285a5dfaeeeda73"
+            ]
+        ]
+    },
+    {
+        "id": "23ae3317acb06e69",
+        "type": "inject",
+        "z": "62844a018c306b35",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 610,
+        "y": 2880,
+        "wires": [
+            [
+                "b5827e35e8e6e273"
+            ]
+        ]
+    },
+    {
+        "id": "b5827e35e8e6e273",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "AnalogOutput_8",
+        "overwritevalue": true,
+        "outputvalue": "10000",
+        "x": 840,
+        "y": 2880,
+        "wires": []
+    },
+    {
+        "id": "78067c742299fbc3",
+        "type": "comment",
+        "z": "62844a018c306b35",
+        "name": "Temperatur-Berechnung",
+        "info": "4580 = 21 Grad\nR1 = 1.28kOhm",
+        "x": 210,
+        "y": 3180,
+        "wires": []
+    },
+    {
+        "id": "8316224cc725cbae",
+        "type": "function",
+        "z": "62844a018c306b35",
+        "name": "Berechnung Widerstand",
+        "func": "var widerstand = 0;\n\nwiderstand = (msg.payload * 1285) / (10000 - msg.payload);\nmsg.payload = widerstand.toFixed(2);\nmsg.payload = parseFloat(msg.payload);\nreturn msg;\n\n\n \n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 3240,
+        "wires": [
+            [
+                "9ea28ba961113672"
+            ]
+        ]
+    },
+    {
+        "id": "db586f0bdb9b7ddf",
+        "type": "revpi-getpin",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "getoverwritevalue": false,
+        "inputpin": "AnalogInput_1",
+        "topic": "",
+        "x": 410,
+        "y": 3240,
+        "wires": [
+            [
+                "8316224cc725cbae",
+                "20a768a3d93778d9"
+            ]
+        ]
+    },
+    {
+        "id": "6a2eb312194becd0",
+        "type": "inject",
+        "z": "62844a018c306b35",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 3240,
+        "wires": [
+            [
+                "db586f0bdb9b7ddf"
+            ]
+        ]
+    },
+    {
+        "id": "dfe0e1e12ca89884",
+        "type": "debug",
+        "z": "62844a018c306b35",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1250,
+        "y": 3240,
+        "wires": []
+    },
+    {
+        "id": "9ea28ba961113672",
+        "type": "function",
+        "z": "62844a018c306b35",
+        "name": "Berechnung Temperatur",
+        "func": "var Temperatur = 0;\nTemperatur = - ( Math.sqrt(-0.00232 * msg.payload + 17.59246) - 3.908) / 0.00116;\nmsg.payload = Temperatur.toFixed(2);\nmsg.payload = parseFloat(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 3240,
+        "wires": [
+            [
+                "dfe0e1e12ca89884",
+                "633105431e0aeb64",
+                "7bd42a17a24454ea",
+                "3d3ee6a92556a955"
+            ]
+        ]
+    },
+    {
+        "id": "633105431e0aeb64",
+        "type": "ui_chart",
+        "z": "62844a018c306b35",
+        "name": "",
+        "group": "b0fdec9b300fe472",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatur",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1250,
+        "y": 3300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7bd42a17a24454ea",
+        "type": "influxdb out",
+        "z": "62844a018c306b35",
+        "influxdb": "d1b439a89be3dafc",
+        "name": "",
+        "measurement": "Temperatur",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1310,
+        "y": 3380,
+        "wires": []
+    },
+    {
+        "id": "7db83cc533bb82fe",
+        "type": "inject",
+        "z": "62844a018c306b35",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 1010,
+        "y": 2700,
+        "wires": [
+            [
+                "a449159f15f78288"
+            ]
+        ]
+    },
+    {
+        "id": "a449159f15f78288",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "DigitalOutput_2",
+        "overwritevalue": false,
+        "outputvalue": "",
+        "x": 1250,
+        "y": 2700,
+        "wires": []
+    },
+    {
+        "id": "82cef1cb2ecbc85a",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "PwmDutycycle_2",
+        "overwritevalue": true,
+        "outputvalue": "250",
+        "x": 1020,
+        "y": 2380,
+        "wires": []
+    },
+    {
+        "id": "3285a5dfaeeeda73",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "PwmDutycycle_2",
+        "overwritevalue": true,
+        "outputvalue": "0",
+        "x": 1020,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "34073d947d887044",
+        "type": "delay",
+        "z": "62844a018c306b35",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 700,
+        "y": 2440,
+        "wires": [
+            [
+                "c95adbf305cb5d85",
+                "072ad396958412c2"
+            ]
+        ]
+    },
+    {
+        "id": "c95adbf305cb5d85",
+        "type": "delay",
+        "z": "62844a018c306b35",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 700,
+        "y": 2500,
+        "wires": [
+            [
+                "53b846e0400b748f"
+            ]
+        ]
+    },
+    {
+        "id": "072ad396958412c2",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "PwmDutycycle_2",
+        "overwritevalue": true,
+        "outputvalue": "500",
+        "x": 1020,
+        "y": 2440,
+        "wires": []
+    },
+    {
+        "id": "53b846e0400b748f",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "PwmDutycycle_2",
+        "overwritevalue": true,
+        "outputvalue": "1000",
+        "x": 1020,
+        "y": 2500,
+        "wires": []
+    },
+    {
+        "id": "a9c6185c382b0c4f",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "PwmDutycycle_2",
+        "overwritevalue": false,
+        "outputvalue": "",
+        "x": 840,
+        "y": 3000,
+        "wires": []
+    },
+    {
+        "id": "73b27d415d70857d",
+        "type": "ui_slider",
+        "z": "62844a018c306b35",
+        "name": "",
+        "label": "Helligkeit LED-Strip",
+        "tooltip": "",
+        "group": "4feab633923a9af9",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "1000",
+        "step": "50",
+        "className": "",
+        "x": 550,
+        "y": 3000,
+        "wires": [
+            [
+                "a9c6185c382b0c4f",
+                "b3ee3be1d588c885"
+            ]
+        ]
+    },
+    {
+        "id": "3d3ee6a92556a955",
+        "type": "ui_text",
+        "z": "62844a018c306b35",
+        "group": "b0fdec9b300fe472",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperatur",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1250,
+        "y": 3340,
+        "wires": []
+    },
+    {
+        "id": "20a768a3d93778d9",
+        "type": "debug",
+        "z": "62844a018c306b35",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 3160,
+        "wires": []
+    },
+    {
+        "id": "b3ee3be1d588c885",
+        "type": "debug",
+        "z": "62844a018c306b35",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 3060,
+        "wires": []
+    },
+    {
+        "id": "407f50fde1f66bb3",
+        "type": "counter-loop",
+        "z": "62844a018c306b35",
+        "name": "Brightness",
+        "counter": "payload",
+        "counterType": "msg",
+        "reset": true,
+        "resetValue": "value-null",
+        "initial": 0,
+        "initialType": "num",
+        "operator": "lte",
+        "termination": "1000",
+        "terminationType": "num",
+        "increment": "10",
+        "incrementType": "num",
+        "x": 230,
+        "y": 2340,
+        "wires": [
+            [],
+            [
+                "2ab18e060fd6b9c6",
+                "6fd4a08c52dd22dc"
+            ]
+        ]
+    },
+    {
+        "id": "219eb33dc9366309",
+        "type": "inject",
+        "z": "62844a018c306b35",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 50,
+        "y": 2340,
+        "wires": [
+            [
+                "407f50fde1f66bb3"
+            ]
+        ]
+    },
+    {
+        "id": "2ab18e060fd6b9c6",
+        "type": "delay",
+        "z": "62844a018c306b35",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "50",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 230,
+        "y": 2420,
+        "wires": [
+            [
+                "407f50fde1f66bb3"
+            ]
+        ]
+    },
+    {
+        "id": "6fd4a08c52dd22dc",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "PwmDutycycle_2",
+        "overwritevalue": false,
+        "outputvalue": "",
+        "x": 440,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "6b6cb9444c7b6223",
+        "type": "switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "15",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "64",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1030,
+        "y": 2200,
+        "wires": [
+            [
+                "9a406bde319b6f09"
+            ],
+            [
+                "125108e4a6917482"
+            ]
+        ]
+    },
+    {
+        "id": "884d6ff29c2988a9",
+        "type": "switch",
+        "z": "62844a018c306b35",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "64",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "15",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1030,
+        "y": 2100,
+        "wires": [
+            [
+                "6659917ab4237a2d"
+            ],
+            [
+                "67b34be1f08cc860"
+            ]
+        ]
+    },
+    {
+        "id": "87e52c973437d399",
+        "type": "revpi-getpin",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "getoverwritevalue": false,
+        "inputpin": "RevPiLED",
+        "topic": "msg.payload",
+        "x": 840,
+        "y": 2100,
+        "wires": [
+            [
+                "884d6ff29c2988a9"
+            ]
+        ]
+    },
+    {
+        "id": "6659917ab4237a2d",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "64",
+        "x": 1260,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "67b34be1f08cc860",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "15",
+        "x": 1260,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "8b4c287fcb408d61",
+        "type": "revpi-getpin",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "getoverwritevalue": false,
+        "inputpin": "RevPiLED",
+        "topic": "msg.payload",
+        "x": 840,
+        "y": 2200,
+        "wires": [
+            [
+                "6b6cb9444c7b6223"
+            ]
+        ]
+    },
+    {
+        "id": "9a406bde319b6f09",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "64",
+        "x": 1260,
+        "y": 2200,
+        "wires": []
+    },
+    {
+        "id": "125108e4a6917482",
+        "type": "revpi-output",
+        "z": "62844a018c306b35",
+        "server": "1b83bc86954dab87",
+        "outputpin": "RevPiLED",
+        "overwritevalue": true,
+        "outputvalue": "15",
+        "x": 1260,
+        "y": 2260,
+        "wires": []
+    }
+]
