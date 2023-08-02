@@ -49,22 +49,6 @@
     - name: "Install the newest version of Node"
       become: yes
       shell: sudo n latest
-      
-    - name: "Install Node-RED"
-      shell: "bash /home/pi/APM_AWX/node-red.sh --confirm-install --confirm-pi"
-      ignore_errors: true
-      
-    - name: "Start the Node-RED service"
-      become: yes
-      shell: sudo systemctl start nodered.service
-
-    - name: "Enable the Node-RED service so that it automatically starts after a restart"
-      become: yes
-      shell: sudo systemctl enable nodered.service
-        
-    - name: "Installing the Node-RED extension of Kunbus"
-      become: yes
-      shell: npm install node-red-contrib-revpi-nodes
 
     - name: "Installing the Node-RED Dashboard"
       become: yes
